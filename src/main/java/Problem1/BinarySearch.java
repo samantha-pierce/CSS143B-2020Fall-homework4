@@ -6,9 +6,6 @@ public class BinarySearch {
     // Add a helper function for recursion calls
     public static int binarySearch(int[] data, int target) {
         // homework
-        if (data.length == 0) {
-            return -1;
-        }
         return binarySearch(data, 0, data.length - 1, target);
     }
 
