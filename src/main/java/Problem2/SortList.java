@@ -21,18 +21,16 @@ public class SortList {
         if (head == null || head.next == null) {
             return null;
         }
-        ListNode fastNode = head.next;
+        ListNode fastNode = head;
         ListNode slowNode = head;
-        while (fastNode != null) {
-            fastNode = fastNode.next;
-            if (fastNode != null) {
-                slowNode = slowNode.next;
-                fastNode = fastNode.next;
-            }
+        ListNode prevSlow = head;
+        while (fastNode != null && fastNode.next != null) {
+            fastNode = fastNode.next.next;
+            prevSlow = slowNode;
+            slowNode = slowNode.next;
         }
-        ListNode mid = slowNode.next;
-        slowNode.next = null;
-        return mid;
+        prevSlow.next = null;
+        return slowNode;
     }
 
     public static ListNode mergeLists(ListNode list1, ListNode list2) {
