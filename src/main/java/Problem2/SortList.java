@@ -41,7 +41,7 @@ public class SortList {
         if (list2 == null) {
             return list1;
         }
-        ListNode head = null;
+        ListNode head;
         if (list1.val < list2.val) {
             head = list1;
             head.next = mergeLists(list1.next, list2);

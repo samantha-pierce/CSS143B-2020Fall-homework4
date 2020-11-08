@@ -71,8 +71,7 @@ public class SingleLinkedList {
     public void reverse() {
         // homework
         if (head.next != null) {
-            ListNode newHead = reverse(head.next);
-            head.next = newHead;
+            head.next = reverse(head.next);
         }
     }
 
