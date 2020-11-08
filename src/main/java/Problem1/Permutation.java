@@ -33,7 +33,6 @@ public class Permutation {
             // put the number back to its original position
             swap(nums, i, position);
         }
-
     }
 
     private static void swap(int[] nums, int i, int j) {
