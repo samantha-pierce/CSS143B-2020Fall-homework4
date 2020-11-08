@@ -70,5 +70,23 @@ public class SingleLinkedList {
     // reverse the linked list RECURSIVELY
     public void reverse() {
         // homework
+        if (head.next != null) {
+            head.next = reverse(head.next);
+        }
+    }
+
+    // helper method
+    private static ListNode reverse(ListNode node) {
+        // base case
+        if (node.next == null) {
+            return node;
+        }
+        ListNode head = reverse(node.next);
+        node.next.next = node;
+        node.next = null;
+        return head;
     }
 }
+
+// credit to https://www.youtube.com/watch?v=S92RuTtt9EE for help explaining how to
+// recursively reverse linked list
